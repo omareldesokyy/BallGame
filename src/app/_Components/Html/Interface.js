@@ -45,7 +45,11 @@ export default function Interface() {
                 0.00
             </div>
 
+<<<<<<< HEAD
             {phase === 'ended' && <div className="text-7xl cursor-pointer absolute text-white uppercase text-center top-56 bg-black bg-opacity-30 w-full font-bebas">
+=======
+            {phase === 'ended' && <div className="text-7xl z-[5] cursor-pointer absolute text-white uppercase text-center top-56 bg-black bg-opacity-30 w-full font-bebas">
+>>>>>>> 9fcb2c7 (edit commit)
                 <h1 onClick={() => { restart() }}>
                     Restart
                 </h1>
