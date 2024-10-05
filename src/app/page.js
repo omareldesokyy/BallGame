@@ -8,7 +8,6 @@ import Ball from "./_Components/Ball/Ball";
 import store from "@/lib/stores/store";
 import { Suspense, useEffect, useState } from "react";
 import Interface from "./_Components/Html/Interface";
-import { useControls } from "leva";
 import { Leva, useControls } from "leva";
 import LoadingScreen from "./_Components/LoadingScreen/LoadingScreen";
 
