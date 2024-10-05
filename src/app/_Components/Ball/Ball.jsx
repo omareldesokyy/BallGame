@@ -74,11 +74,7 @@ export default function Ball() {
 
         if (intersect.timeOfImpact < .2) {
 
-
-            ball.current.applyImpulse(new THREE.Vector3(0, .35, 0))
-
             ball.current.applyImpulse(new THREE.Vector3(0, .5, 0))
-
 
         }
 

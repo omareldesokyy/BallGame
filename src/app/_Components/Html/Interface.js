@@ -9,47 +9,41 @@ export default function Interface() {
     const { restart, phase } = store((state) => { return state })
     const time = useRef()
     useEffect(() => {
-        const timer =addEffect(() =>
-            {
-                const state = store.getState()
-           
-                let elapsedTime = 0
-                if (state.phase === 'playing') {
-                    elapsedTime = Date.now() - state.startTime
-                }
-                else if (state.phase === 'ended') {
+        const timer = addEffect(() => {
+            const state = store.getState()
 
-                    elapsedTime = state.endTime - state.startTime
-                }
-
-                elapsedTime /= 1000
-                elapsedTime = elapsedTime.toFixed(2)
-
-                if(time.current)
-                    time.current.textContent = elapsedTime
+            let elapsedTime = 0
+            if (state.phase === 'playing') {
+                elapsedTime = Date.now() - state.startTime
             }
-           
+            else if (state.phase === 'ended') {
+
+                elapsedTime = state.endTime - state.startTime
+            }
+
+            elapsedTime /= 1000
+            elapsedTime = elapsedTime.toFixed(2)
+
+            if (time.current)
+                time.current.textContent = elapsedTime
+        }
+
         )
 
-        return ()=>{
+        return () => {
             timer()
         }
-        
+
 
     }, [])
 
     return (
         <div>
-        
+
             <div ref={time} className=' font-bebas text-7xl absolute text-white top-10  text-center uppercase bg-black bg-opacity-30 w-full'>
                 0.00
             </div>
-
-<<<<<<< HEAD
-            {phase === 'ended' && <div className="text-7xl cursor-pointer absolute text-white uppercase text-center top-56 bg-black bg-opacity-30 w-full font-bebas">
-=======
             {phase === 'ended' && <div className="text-7xl z-[5] cursor-pointer absolute text-white uppercase text-center top-56 bg-black bg-opacity-30 w-full font-bebas">
->>>>>>> 9fcb2c7 (edit commit)
                 <h1 onClick={() => { restart() }}>
                     Restart
                 </h1>

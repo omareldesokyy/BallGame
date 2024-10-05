@@ -1,21 +1,13 @@
-<<<<<<< HEAD
-=======
 import { numberOfTraps } from "@/app/page";
 import { useControls } from "leva";
->>>>>>> 9fcb2c7 (edit commit)
 import { create } from "zustand";
 import { subscribeWithSelector } from 'zustand/middleware'
 
 
 export default create(subscribeWithSelector((set)=>{
-<<<<<<< HEAD
-    return {
-        blocksCount:10,
-=======
-
+   
     return {
         blocksCount:5,
->>>>>>> 9fcb2c7 (edit commit)
         
         //Phases
 
@@ -51,14 +43,11 @@ export default create(subscribeWithSelector((set)=>{
                 }
                 return {}
             })
-<<<<<<< HEAD
-=======
         },
         blocks:(number)=>{
             set((state)=>{
                 return {blocksCount:number}
             })
->>>>>>> 9fcb2c7 (edit commit)
         }
 
     }
